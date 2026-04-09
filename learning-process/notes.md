@@ -31,3 +31,7 @@ Diskin mantıksal parçalara ayrılmasıdır. yani belirlediğin pathlere (root:
 7. GRUB Boot Loader:
 GRUB, Linux’un açılmasını sağlayan önyükleyici yazılımdır. Debian kurulumunda GRUB’u yükleyerek VM’in hangi işletim sistemini başlatacağını belirledin. “sda” seçerek, GRUB’u sanal diskin ana alanına (MBR) yükledin. Bu sayede VM açıldığında otomatik olarak Debian başlatılacak. Eğer GRUB kurulmazsa, VM açıldığında işletim sistemi yüklenemez ve hata verir.
 
+8. Snapshot:
+Yani işletim sistemi, dosyalar, ayarlar ve programlar tam olarak o anki şekilde kaydedilir.
+Eğer sonra bir şeyler bozulursa veya yanlış bir şey yaparsan, snapshot’ı geri yükleyerek VM’yi o ana geri alabilirsin.
+Gerçek hayatta bir “fotoğraf” gibi düşünebilirsin, her şeyi dondurur ve istediğinde tekrar açabilirsin.
