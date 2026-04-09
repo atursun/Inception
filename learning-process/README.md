@@ -1,4 +1,5 @@
-# inception
+# inception (9 nisanda projeye başlandı)
+
 Bu proje, Docker kullanarak sistem yönetimi bilginizi genişletmeyi amaçlamaktadır.
 Yeni kişisel sanal makinenizde çeşitli Docker imajlarını sanallaştıracaksınız.
 Bu proje belirli kurallar altında farklı servislerden oluşan küçük bir altyapı kurmanızı istiyor.
@@ -141,11 +142,12 @@ Her servis kendi container’ında → çakışma tamamen ortadan kalkar.
 - Docker, containerlar ve işletim sistemi arasında olan bağlantıları kurar.
 Container -> Docker <- OS
 
-- Dockerfile adımları/komutları tek tek yazdığımız dosyadır
+###
+- Dockerfile, Adımları/komutları tek tek yazdığımız dosyadır
 Image ise Dockerfile'a yazdığımız adımları tek tek takip ederek çalıştırılmak üzere
 hazır hale getiren bir pakettir.
 container ise hazırladığımız bu image'ı çalıştıracağımız bir ortam.
-
+###
 
 
 ## Docker Client && Engine (server)
@@ -167,7 +169,7 @@ container ise hazırladığımız bu image'ı çalıştıracağımız bir ortam.
     1. Projeyi Kendi bilgisayarında değil, bir sanal makine (vm) içinde yaplımalıdır.
     amaç, Gerçek sunucu ortamını simüle etmek ve Sistem yöneticiliği bakış açısı kazanmak.
     2. Servisleri tek tek `docker run` ile ayağı kaldırmaktansa, Tüm servisler `docker-compose.yml` ile ayağa kaldırılmalıdır. Servislerin birbirleriyle ilişkisi **compose üzerinden** yönetilmelidir.
-    3. **Tüm konfigürasyon dosyaları** `srcs/` klasörü içinde olmalı. 
+    3. **Tüm konfigürasyon dosyaları** `srcs/` klasörü içinde olmalı.
     Root dizinde mutlaka: `Makefile`, `README.md` diğer .md dosyaları olmalı
     4. Makefile ile program inşa edilmelil. make komutu ile; Docker image’ları build etmeli, Docker Compose ile container’ları ayağa kaldırmalı. amaç, “Projeyi tek komutla çalıştırabiliyor musun?
 
@@ -431,26 +433,24 @@ Altta gördüğün silindirler **Volume**’leri temsil eder.
 
 
 
-# Projeyi yaparken attığım adımları
-----
-## 1. ilk olarak sanal makineyi kurdum linux debian iso dosyasını ekledim. 
-## 2. user'ı sudo grubuna ekledim.
-## 3. sanal makineye docker'ı indirdim.
-## 4. 
-----
+
+# Proje Bittikten Sonra Ne Yapmış Oluyorum ?
+Bu projede, bir sanal makine üzerinde Docker kullanarak çalışan bir web altyapısı kurmuş olacaksın.
+NGINX, WordPress ve MariaDB servislerini ayrı container’larda çalıştırıp birbirine bağlamış olacaksın.
+Sistemi HTTPS (TLS) ile güvenli hale getirip tek giriş noktası oluşturmuş olacaksın.
+Verileri volume kullanarak kalıcı hale getirmiş ve servisleri otomatik yönetilebilir yapmış olacaksın.
+Sonuç olarak, gerçek hayattaki bir web sunucu altyapısını sıfırdan kurmayı öğrenmiş olacaksın.
+"Ben sadece bir web sitesi kurmadım, o web sitesini çalıştıran tüm sistemi kurdum"
 
 
 
 # ÖNEMLİ
--> hostname ve domain name arasındaki fark nedir ?(önemli)
+-> hostname ve domain name arasındaki fark nedir ? (önemli)
 
-root password: 1234apo!
-user : abdullah passowrd: apoQ77
-----
+
 Kendi bilgisayarımdakiler
-hostname -> atursun
-domainname -> localdomain
-root password -> 12345
-username -> apo | şifresi -> 123
-
-
+----
+hostname -> abdullah
+domain-name -> atursun.42.fr
+root password -> 2332
+username -> apo | şifresi -> 233
