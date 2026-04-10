@@ -1,14 +1,9 @@
 
 Projeyi yaparken attığın adımlar ve öğrendiğin şeylerin listesi/adımları
 
-# Projeyi yaparken attığım adımları
-----
-## 1. ilk olarak sanal makineyi kurdum linux debian iso dosyasını ekledim. 
-## 2. user'ı sudo grubuna ekledim.
-## 3. sanal makineye docker'ı indirdim.
-## 4. 
-----
+1. sanal makine de SİSTEM KURULUMU yaptık
 
-# Sanallaştırma
-
-
+2. sonrasında SİSTEM YAPILANDIRILMASI yaptık
+	- sudo kurulumu, kullanıcıyı sudo grubuna ekleme ve tam yetkilendirme
+	- ekranı tam yapma (guest edition)
+	- gerekli paketlerin/servislerin kurulumu (git, vscode, )
