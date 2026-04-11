@@ -39,10 +39,6 @@ kısacası, Her servis kendi portunu dinler → Her uygulama kendisine ayrılmı
 -monitoring(izleme) -> Bir sistemin, uygulamanın veya sunucunun performansını, sağlığını ve hatalarını sürekli olarak takip etme ve ölçme işlemidir. (monitoring örnekleri; GRAFANA, Prometheus)
 monitoring şunları izleyebilir; CPU kullanımı, RAM tüketimi, Disk doluluk, Ağ trafiği
 
--Servis -> bir uygulamanın veya sistemin belirli bir işlevi yerine getiren bağımsız parçasına denir.
-Yani bir yazılımın içinde tek bir görevi yapan küçük bir birimdir.
-Bir web uygulaması vardır; fronted ve backend ayrı servistir ikisinin farklı amaçları vardır.
-
 -Component(Bileşen) -> Bir uygulamanın küçük, bağımsız, tekrar kullanılabilir parçasıdır.
 Component, belirli bir görevi yerine getiren, kendi içinde çalışan, bağımsız bir modüldür.
 Bir uygulama, birçok component’in birleşmesiyle oluşur.
@@ -445,8 +441,6 @@ Sonuç olarak, gerçek hayattaki bir web sunucu altyapısını sıfırdan kurmay
 
 
 # ÖNEMLİ
--> hostname ve domain name arasındaki fark nedir ? (önemli)
-
 
 Kendi bilgisayarımdakiler
 ----

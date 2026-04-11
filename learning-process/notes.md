@@ -35,3 +35,14 @@ GRUB, Linux’un açılmasını sağlayan önyükleyici yazılımdır. Debian ku
 Yani işletim sistemi, dosyalar, ayarlar ve programlar tam olarak o anki şekilde kaydedilir.
 Eğer sonra bir şeyler bozulursa veya yanlış bir şey yaparsan, snapshot’ı geri yükleyerek VM’yi o ana geri alabilirsin.
 Gerçek hayatta bir “fotoğraf” gibi düşünebilirsin, her şeyi dondurur ve istediğinde tekrar açabilirsin.
+
+9. Servis:
+Servis, bir makinenin arka planında sürekli çalışan ve bir iş yapan programdır.
+Servisler, sen istemeden de çalışırlar, beklerler, istek gelince yanıt verirler
+
+
+10. Server (Sunucu):
+Sunucu, Bir ağ üzerinde, istemcilerden (client) gelen istekleri karşılayıp yanıt veren donanım veya yazılımdır. "İstek bekleyen, istek gelince hizmet veren taraf."
+Sunucu (server), diğer bilgisayarlara hizmet sağlayan bir bilgisayardır. Kullanıcıların kullandığı cihazlar istemci (client) olarak adlandırılır ve sunucuya istek gönderir; sunucu da bu isteklere cevap verir. Örneğin bir web sitesine girdiğinde sunucu sana siteyi gönderir, oyun oynarken sunucu oyuncuları birbirine bağlar, dosya indirirken sunucu dosyayı iletir. Gerçek hayatta bir restorandaki mutfak gibi düşünülebilir: müşteri sipariş verir, mutfak hazırlar ve sunar. Sunucular farklı amaçlara göre türlere ayrılır; web sunucuları siteleri çalıştırır, veritabanı sunucuları verileri saklar, oyun sunucuları oyuncuları yönetir ve dosya sunucuları dosya paylaşımı yapar.
+Sunucu (server) dediğin şey aslında tek bir program değil, birlikte çalışan servislerin oluşturduğu bir sistemdir.
+
