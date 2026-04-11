@@ -48,3 +48,14 @@ Sunucu (server) dediğin şey aslında tek bir program değil, birlikte çalış
 
 11. Bridged Adapter:
 sanal makinenin modemden gerçek bir cihaz gibi IP almasını sağlar. Böylece VM, aynı ağda ayrı bir bilgisayar gibi görünür ve ana bilgisayardan doğrudan SSH ile bağlanabilirsin. NAT’a göre daha kolay ve direkt bağlantı sağlar.
+
+12. conf dosyası:
+Config dosyası, bir programın nasıl çalışacağını belirleyen ayar dosyasıdır. yani, Programın “kuralları ve ayarları”dır. örneğin bir web sunucusunun (nginx); config dosyası şunu söyler: 
+- hangi portta çalışacak? (80 / 443)
+- Hangi klasörden siteyi gösterecek?
+- Hangi domain için çalışacak?
+- PHP varsa nasıl işleyecek?
+
+13. Domain–IP Bağlantısı:
+- 127.0.0.1 atursun.42.fr
+
