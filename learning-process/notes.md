@@ -46,3 +46,5 @@ Sunucu, Bir ağ üzerinde, istemcilerden (client) gelen istekleri karşılayıp 
 Sunucu (server), diğer bilgisayarlara hizmet sağlayan bir bilgisayardır. Kullanıcıların kullandığı cihazlar istemci (client) olarak adlandırılır ve sunucuya istek gönderir; sunucu da bu isteklere cevap verir. Örneğin bir web sitesine girdiğinde sunucu sana siteyi gönderir, oyun oynarken sunucu oyuncuları birbirine bağlar, dosya indirirken sunucu dosyayı iletir. Gerçek hayatta bir restorandaki mutfak gibi düşünülebilir: müşteri sipariş verir, mutfak hazırlar ve sunar. Sunucular farklı amaçlara göre türlere ayrılır; web sunucuları siteleri çalıştırır, veritabanı sunucuları verileri saklar, oyun sunucuları oyuncuları yönetir ve dosya sunucuları dosya paylaşımı yapar.
 Sunucu (server) dediğin şey aslında tek bir program değil, birlikte çalışan servislerin oluşturduğu bir sistemdir.
 
+11. Bridged Adapter:
+sanal makinenin modemden gerçek bir cihaz gibi IP almasını sağlar. Böylece VM, aynı ağda ayrı bir bilgisayar gibi görünür ve ana bilgisayardan doğrudan SSH ile bağlanabilirsin. NAT’a göre daha kolay ve direkt bağlantı sağlar.
