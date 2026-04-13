@@ -17,6 +17,8 @@ RUN wget https://wordpress.org/latest.tar.gz \
 	&& mv wordpress/* . \
 	&& rm -rf wordpress latest.tar.gz
 
+RUN mkdir -p /var/www/html /run/php
+
 RUN sed -i 's|listen = /run/php/php.*-fpm.sock|listen = 9000|g' \
 	/etc/php/*/fpm/pool.d/www.conf
 
