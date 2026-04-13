@@ -10,10 +10,6 @@ RUN mkdir -p /etc/ssl/certs /etc/ssl/private && \
 	
 COPY conf/nginx.conf /etc/nginx/nginx.conf
 
-COPY www/ /var/www/html/
-
-RUN chmod -R 755 /var/www/html/
-
 EXPOSE 443
 
 CMD ["nginx", "-g", "daemon off;"]

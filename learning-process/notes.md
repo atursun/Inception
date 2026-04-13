@@ -57,12 +57,30 @@ Config dosyası, bir programın nasıl çalışacağını belirleyen ayar dosyas
 - PHP varsa nasıl işleyecek?
 
 13. Domain–IP Bağlantısı:
-- 127.0.0.1 atursun.42.fr
+127.0.0.1 -> atursun.42.fr
+- Bu satır şu demek; "atursun.42.fr domaini aslında bu bilgisayara (localhost) ait"
+Tarayıcı Normalde Ne Yapar, Sen tarayıcıya şunu yazdığında: https://atursun.42.fr
+Normalde şu olur: DNS’e gider, "Bu domainin IP’si ne?" diye sorar, IP bulur, O IP’ye bağlanır
+Ama Senin Durumunda, Bu domain gerçek bir domain değil; DNS’te yok ❌, İnternette karşılığı yok ❌
+Bu yüzden çözümü şudur: "/etc/hosts"
+Bu dosya local DNS gibi çalışyor.
+127.0.0.1 atursun.42.fr -> yaptığımızda, Bunun anlamı, 
+| Domain        | IP        |
+| ------------- | --------- |
+| atursun.42.fr | 127.0.0.1 |
 
+Gerçek Akış
+
+Şimdi kullanıcı yazıyor: https://atursun.42.fr
+
+Sistem şöyle çözüyor:
+- /etc/hosts kontrol edilir
+- eşleşme bulunur ✅
+- IP → 127.0.0.1
+- bağlantı → kendi bilgisayarına gider
 
 14. TLS (Transport Layer Security) / SSl:
-- config dosyasını yapılandırma
-- ssl sertifikası oluşturma komutu ve container'e ekleme (Dockerfile)
+TLS (Transport Layer Security) — eski adıyla SSL — istemci (tarayıcı) ile sunucu (NGINX) arasındaki iletişimi şifreleyen ve kimlik doğrulayan bir güvenlik katmanıdır. Amaç; gönderilen verilerin üçüncü kişiler tarafından okunamaması (gizlilik), değiştirilmemesi (bütünlük) ve gerçekten doğru sunucuya bağlanıldığının doğrulanmasıdır (kimlik doğrulama).
 
 
 

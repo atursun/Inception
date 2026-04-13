@@ -138,12 +138,20 @@ Her servis kendi container’ında → çakışma tamamen ortadan kalkar.
 - Docker, containerlar ve işletim sistemi arasında olan bağlantıları kurar.
 Container -> Docker <- OS
 
-###
-- Dockerfile, Adımları/komutları tek tek yazdığımız dosyadır
-Image ise Dockerfile'a yazdığımız adımları tek tek takip ederek çalıştırılmak üzere
+######################
+- Dockerfile, Bir container’ın nasıl oluşturulacağını adım adım tanımlayan bir tarif (recipe) dosyasıdır.
+“Benim container’ım şu işletim sisteminden başlasın, şu paketleri kursun, şu dosyaları içine alsın ve en sonunda şu komutla çalışsın.”
+Docker bu dosyayı okuyup bir image oluşturur.
+Image ise, Dockerfile'a yazdığımız adımları tek tek takip ederek çalıştırılmak üzere
 hazır hale getiren bir pakettir.
-container ise hazırladığımız bu image'ı çalıştıracağımız bir ortam.
-###
+Container ise, hazırladığımız bu image'ı çalıştıran bir uygulama.
+- Akış: Dockerfile → docker build → image → docker run → container
+
+
+
+
+
+######################
 
 
 ## Docker Client && Engine (server)

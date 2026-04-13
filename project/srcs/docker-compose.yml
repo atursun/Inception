@@ -1,0 +1,21 @@
+services:
+  wordpress:
+    build: ./requirements/wordpress
+    container_name: wordpress
+    networks:
+      - inception
+    expose:
+      - "9000"
+
+  nginx:
+    build: ./requirements/nginx
+    container_name: nginx
+    networks:
+      - inception
+    expose:
+      - "443:443"
+    depends_on:
+      - wordpress
+networks:
+  inception:
+    driver: bridge
