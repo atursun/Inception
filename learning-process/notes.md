@@ -59,3 +59,15 @@ Config dosyası, bir programın nasıl çalışacağını belirleyen ayar dosyas
 13. Domain–IP Bağlantısı:
 - 127.0.0.1 atursun.42.fr
 
+
+14. TLS (Transport Layer Security) / SSl:
+- config dosyasını yapılandırma
+- ssl sertifikası oluşturma komutu ve container'e ekleme (Dockerfile)
+
+
+
+
+
+
+
+
