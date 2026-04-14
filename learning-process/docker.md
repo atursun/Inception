@@ -260,3 +260,8 @@ Burada image ve container farkını da iyi anlamak gerekir. Image, Dockerfile’
 5. docker ps
 
 6. docker network create <network_adı>
+
+7. docker compose up --build <-d>
+
+
+
