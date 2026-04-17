@@ -1,10 +1,11 @@
 services:
   mariadb:
-    build: ./requirements/mariadb
+    build: ./requirements/mariadb   # Dizindeki dockerfile'dan image build ediyorsun
     container_name: mariadb
+    restart: always
     networks:
       - inception
-    expose:
+    expose:                       # Sadece internal erişim. dışarıdan erişmezsin.
       - "3306"
     volumes:
       - mariadb:/var/lib/mysql
@@ -14,6 +15,7 @@ services:
   wordpress:
     build: ./requirements/wordpress
     container_name: wordpress
+    restart: always
     networks:
       - inception
     expose:
@@ -21,13 +23,14 @@ services:
     volumes:
       - wordpress:/var/www/html
     depends_on:
-      - mariadb
+      - mariadb       # DB önce başlayacak demek. 
     env_file:
       - .env
 
   nginx:
     build: ./requirements/nginx
     container_name: nginx
+    restart: always
     networks:
       - inception
     ports:
@@ -35,7 +38,7 @@ services:
     depends_on:
       - wordpress
     volumes:
-      - wordpress:/var/www/html
+      - wordpress:/var/www/html   # wordpress servisinin Aynı volume, Nginx WordPress dosyalarını okuyabilir
 
 networks:
   inception:
@@ -44,3 +47,10 @@ networks:
 volumes:
   wordpress:
   mariadb:
+
+
+
+
+
+# expose → sadece container içi
+# ports → dış dünyaya açık

@@ -7,7 +7,7 @@ RUN mkdir -p /etc/ssl/certs /etc/ssl/private && \
 	-keyout /etc/ssl/private/key.pem \
 	-out /etc/ssl/certs/cert.pem \
 	-subj "/CN=atursun.42.fr"
-	
+
 COPY conf/nginx.conf /etc/nginx/nginx.conf
 
 EXPOSE 443

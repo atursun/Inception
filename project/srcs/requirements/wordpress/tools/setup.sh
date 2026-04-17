@@ -6,7 +6,7 @@ until mysqladmin ping -h"mariadb" -u"${MYSQL_USER}" -p"${MYSQL_PASSWORD}" --sile
     sleep 2
 done
 echo ">>> MariaDB hazır!"
-
+    
 # wp-config.php kontrolünü doğru path'te yap
 if [ ! -f /var/www/html/wp-config.php ]; then
     echo ">>> WordPress yapılandırılıyor..."
