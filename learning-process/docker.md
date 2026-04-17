@@ -232,6 +232,29 @@ nginx -g "daemon off;"
 | CMD    | Container başlatma komutu        |
 
 
+############################################################################################
+# Dockerfile
+
+
+# image nedir ?
+Docker image, bir uygulamayı çalıştırmak için gereken her şeyin (kod, kütüphaneler, bağımlılıklar, ayarlar) hazır paketlenmiş, değiştirilemez (immutable) bir şablonudur.
+
+
+# Container nedir ?
+
+
+# Docker Network
+Docker ağları, Docker konteynerleri arasındaki iletişimi sağlamak için kullanılır. Bir Docker ağı, Docker konteynerlerinin belirli bir IP aralığında iletişim kurmasını sağlar ve bu sayede, aynı ağda bulunan konteynerler arasında bağlantı kurulabilir.
+Docker ağına eklenen konteynerler, belirli bir IP aralığında IP adresleri alır. Bu sayede, konteynerler arasında IP adresleri kullanılarak iletişim kurulabili
+
+# volumes
+Docker depolama, Docker konteynerleri için kullanılan verilerin saklanması ve yönetilmesini sağlayan bir özelliktir. Docker konteynerleri, genellikle bir veri depolama alanına ihtiyaç duyarlar ve Docker, bu ihtiyacı karşılamak için farklı depolama seçenekleri sunar. onlardan birisi de "volumes"'tır
+
+# Docker-compose 
+Docker-compose, birden fazla Docker konteynerinin yönetimini kolaylaştıran bir araçtır. Docker-compose, Docker Compose dosyalarını kullanarak, birden fazla Docker konteynerini tek bir komutla başlatabilir, durdurabilir ve yönetebilirsiniz.
+
+############################################################################################
+
 
 
 #####################
@@ -249,19 +272,26 @@ Burada image ve container farkını da iyi anlamak gerekir. Image, Dockerfile’
 
 
 ######DOCKER_KOMUTLARI########
-1. docker build -t <image-adı> .
 
-2. docker run -d -p <HOST_PORT>:<CONTAINER_PORT> --name <container_name> <image_name>
+# images
+    1. docker build -> dockerfile'dan bir image oluşturur. (docker build -t <image-adı> .)
+    2. docker pull <image> -> Bir image indirmek için kullanılır.
+    3. docker images -> image'ları listeler.
+    4. docker rmi -> bir image siler.
 
-3. docker stop <container_name>
+# container
+    1. docker run -> bir container oluşturmak ve çalıştırmak için kullanılır
+        - docker run -d -p <HOST_PORT>:<CONTAINER_PORT> --name <container_name> <image_name>
+    3. docker stop <container_name> -> çalışan container'ı durdurur.
+    4. docker rm <container_name> -> container'ı siler
+    5. docker ps -> aktif olarak çalışan container'ları listeler.
 
-4. docker rm <container_name>
+# network
+    docker network ls -> Docker ağlarının listesini gösterir.
+    docker network create -> Bir Docker ağı oluşturmak için kullanılır.
+    docker network inspect -> Bir Docker ağı hakkında ayrıntılı bilgi almak için kullanılır.
+    docker network connect -> Bir Docker konteynerini bir Docker ağına eklemek için kullanılır.
+    docker network disconnect -> Bir Docker konteynerini bir Docker ağından çıkarmak için kullanılır.
 
-5. docker ps
-
-6. docker network create <network_adı>
 
 7. docker compose up --build <-d>
-
-
-

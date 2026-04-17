@@ -216,6 +216,10 @@ Container ise, hazırladığımız bu image'ı çalıştıran bir uygulama.
     2. Bu domain, sunucunun local IP adresine yönlendirilmelidir.
     Yönlendirme, `/etc/hosts` dosyası üzerinden yapılabilir.
 
+
+- ÖNEMLİ("Dockerfile yazarken PID 1 (process ID 1) hakkında bilgi edin ve en iyi uygulamaları öğren")
+
+
 - 9️⃣ Environment Variables & Secrets (subjecteki ! tabelalı kırmızı alanı oku)
     1. Docker image’larda *latest* etiketi yasaktır, çünkü sürüm belirsizliği yaratır; kullanılan sürüm açıkça belirtilmelidir.
     2. Dockerfile içinde hiçbir şifre veya gizli bilgi bulunamaz; tüm yapılandırmalar environment variable olarak tanımlanmalı ve bu değişkenler zorunlu olarak .env dosyasından alınmalıdır.

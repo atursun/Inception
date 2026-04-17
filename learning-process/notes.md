@@ -83,7 +83,7 @@ Sistem şöyle çözüyor:
 TLS (Transport Layer Security) — eski adıyla SSL — istemci (tarayıcı) ile sunucu (NGINX) arasındaki iletişimi şifreleyen ve kimlik doğrulayan bir güvenlik katmanıdır. Amaç; gönderilen verilerin üçüncü kişiler tarafından okunamaması (gizlilik), değiştirilmemesi (bütünlük) ve gerçekten doğru sunucuya bağlanıldığının doğrulanmasıdır (kimlik doğrulama).
 
 
-
+15. git rm --cached <dosya> -> uzak repodaki bir dosyası siler. sonra localde commit yapıp push yapman gerekiyor.
 
 
 

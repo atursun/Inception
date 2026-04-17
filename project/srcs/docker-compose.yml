@@ -11,7 +11,6 @@ services:
       - mariadb:/var/lib/mysql
     env_file:
       - .env
-
   wordpress:
     build: ./requirements/wordpress
     container_name: wordpress
@@ -26,7 +25,6 @@ services:
       - mariadb       # DB önce başlayacak demek. 
     env_file:
       - .env
-
   nginx:
     build: ./requirements/nginx
     container_name: nginx
@@ -39,6 +37,22 @@ services:
       - wordpress
     volumes:
       - wordpress:/var/www/html   # wordpress servisinin Aynı volume, Nginx WordPress dosyalarını okuyabilir
+  adminer:
+    build: ./requirements/bonus/adminer   # Dizindeki dockerfile'dan image build ediyorsun
+    container_name: adminer
+    restart: always
+    networks:
+      - inception
+    expose:
+      - "85"
+  static-website:
+    build: ./requirements/bonus/static-website   # Dizindeki dockerfile'dan image build ediyorsun
+    container_name: static-website
+    restart: always
+    networks:
+      - inception
+    expose:
+      - "80"
 
 networks:
   inception:
