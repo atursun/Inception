@@ -1,13 +1,13 @@
 services:
   mariadb:
-    build: ./requirements/mariadb   # Dizindeki dockerfile'dan image build ediyorsun
+    build: ./requirements/mariadb   # Dizindeki dockerfile'dan image build ediyorsun (build: docker build komutunun yerini alıyor)
     container_name: mariadb
     restart: always
-    networks:
+    networks:                     # networks: kısmı docker network create inception_network komutunun yerini alıyor.
       - inception
     expose:                       # Sadece internal erişim. dışarıdan erişmezsin.
       - "3306"
-    volumes:
+    volumes:                      # volumes: kısmı docker volume create komutlarının yerini alıyor.
       - mariadb:/var/lib/mysql
     env_file:
       - .env
@@ -53,6 +53,24 @@ services:
       - inception
     expose:
       - "80"
+  uptime:
+    build: ./requirements/bonus/uptime
+    container_name: uptime
+    restart: always
+    networks:
+      - inception
+    ports:
+      - "3001:3001"
+    volumes:
+      - uptime:/app/data
+  redis:
+    build: ./requirements/bonus/redis
+    container_name: redis
+    restart: always
+    networks:
+      - inception
+    expose:
+      - "6379"
 
 networks:
   inception:
@@ -61,6 +79,7 @@ networks:
 volumes:
   wordpress:
   mariadb:
+  uptime:
 
 
 

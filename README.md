@@ -1,4 +1,4 @@
-# Inception (Dockerized WordPress Stack)
+  # Inception (Dockerized WordPress Stack)
 
 Bu repo, Docker Compose ile **NGINX (TLS) + WordPress (PHP-FPM) + MariaDB** servislerinden oluşan küçük bir web altyapısı kurar. Amaç, servisleri ayrı container’larda izole şekilde çalıştırmayı; network/volume/TLS gibi “production’a yakın” altyapı kavramlarını öğrenmektir.
 

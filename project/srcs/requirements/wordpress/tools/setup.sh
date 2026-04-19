@@ -32,6 +32,14 @@ if [ ! -f /var/www/html/wp-config.php ]; then
         --user_pass="${WP_USER_PASS}" \
         --path='/var/www/html'
 
+    echo ">>> Redis yapılandırılıyor ve etkinleştiriliyor..."
+    wp config set WP_CACHE true --raw --type=constant --allow-root --path='/var/www/html'
+    wp config set WP_REDIS_HOST 'redis' --type=constant --allow-root --path='/var/www/html'
+    wp config set WP_REDIS_PORT 6379 --raw --type=constant --allow-root --path='/var/www/html'
+    
+    wp plugin install redis-cache --activate --allow-root --path='/var/www/html'
+    wp redis enable --allow-root --path='/var/www/html'
+
     echo ">>> WordPress kurulumu tamamlandı!"
 else
     echo ">>> WordPress zaten kurulu, atlanıyor."

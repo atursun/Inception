@@ -1,9 +1,6 @@
 FROM debian:bullseye
 
-RUN apt update && apt install -y \
-    php \
-    php-mysqli \
-    wget
+RUN apt update && apt install -y php php-mysqli wget
 
 WORKDIR /var/www
 
