@@ -44,3 +44,9 @@ d
 
 
 - Sunucu (server) dediğin şey aslında tek bir program değil, birlikte çalışan servislerin oluşturduğu bir sistemdir.
+
+
+
+- resources
+    - https://github.com/gkandemi/docker
+    - https://medium.com/@ozelfaruk/docker-kurulumu-ve-temel-komutlar-367d46a07bed

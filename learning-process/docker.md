@@ -208,6 +208,7 @@ Docker Compose, birden çok konteyner içeren uygulamaları YAML dosyası ile ta
 | `docker-compose pull`              | Compose servisleri için gerekli imajları çeker.     | `docker-compose pull` – Tüm servislerin gerekli imajlarını registry’den indirir. |
 
 **Not:** Yeni Docker sürümlerinde `docker compose` (boşluklu) komut seti, CLI eklentisi olarak kullanılabilmektedir. Kullanımı `docker-compose` ile benzerdir.  
+Her şeyi güncel Dockerfile ve ayarlarla (önbellek kullanmadan) EN BAŞTAN İNŞA ET -> docker compose build --no-cache
 
 ## Örnekler  
 Aşağıda tipik Dockerfile, docker-compose ve multi-stage build örnekleri ile debug yöntemleri verilmiştir.  

@@ -90,39 +90,6 @@ username -> apo | şifresi -> 233
     Ortama göre değişebilecek bilgileri .env dosyasına koy
     .env gitignore’da olmalı. GitHub’a push edilmemeli. (NEDENİNİ ÖĞREN)
 
-* Bizden README.md ve Documentations dosyaları istiyorlar
-
-* Bizden istenilen Proje Klasör Yapısı (yine subjecten kontrol etmeyi unutma)
-inception/
-├── Makefile
-├── secrets/
-│   ├── credentials.txt
-│   ├── db_password.txt
-│   └── db_root_password.txt
-└── srcs/
-    ├── .env
-    ├── docker-compose.yml
-    └── requirements/
-        ├── mariadb/
-        │   ├── Dockerfile
-        │   ├── .dockerignore
-        │   ├── conf/
-        │   └── tools/
-        ├── nginx/
-        │   ├── Dockerfile
-        │   ├── .dockerignore
-        │   ├── conf/
-        │   └── tools/
-        ├── wordpress/
-        │   ├── Dockerfile
-        │   ├── .dockerignore
-        │   ├── conf/
-        │   └── tools/
-        ├── tools/
-        └── bonus/
-
-
-
 ######
 - Sonuç: Subjec'teki diyagram Docker kullanılarak kurulmuş bir WordPress web sitesinin mimarisini adım adım gösteriyor.
 
