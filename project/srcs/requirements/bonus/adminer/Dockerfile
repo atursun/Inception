@@ -14,9 +14,3 @@ EXPOSE 85
 # Böylece ayrı bir Nginx veya Apache kurmadan;
 # php -S komutuyla, 0.0.0.0:85 (tüm ağdan gelenlere 85 portundan cevap ver) diyerek web sunucusunu ayağa kaldırır. -t /var/www ile de ana dizinin (yani index.php'nin bulunduğu klasörün) kendi başlattığı mini sunucunun çalıştığı yer olduğunu belirtir.
 CMD ["php", "-S", "0.0.0.0:85", "-t", "/var/www"]
-
-
-# adminer
-# redis
-# uptime
-# ftp
