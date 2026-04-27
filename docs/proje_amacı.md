@@ -40,13 +40,3 @@ d
         - WordPress: Nginx ve MariaDB yapılandırıldıktan sonra kurulacak.
 	3. Nginx servisini docker ile çalıştırma (nginx servisini indirdim daha sonra Dockerfile yazdım ve container için de nginx yükledim sonra çalştırdım örnek olması açısından www/index.html oluşturdum, nginx.conf dosyasını yazdım, DOMAIN-IP eşleşmesi yaptım /etc/hsots) (yani kısacası nginx servisini kurup yapılandırdım) (tek kalan şey ise, portu 443 yapmam ve TLS..)
 	4. WordPress + php-form, servisini yükle ve yapılandır.
-
-
-
-- Sunucu (server) dediğin şey aslında tek bir program değil, birlikte çalışan servislerin oluşturduğu bir sistemdir.
-
-
-
-- resources
-    - https://github.com/gkandemi/docker
-    - https://medium.com/@ozelfaruk/docker-kurulumu-ve-temel-komutlar-367d46a07bed

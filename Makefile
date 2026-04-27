@@ -38,10 +38,10 @@ ps:
 	@$(COMPOSE) ps
 
 clean: down
-	@$(COMPOSE) -v
+	@$(COMPOSE) down -v
 
 fclean: down
-	@$(COMPOSE) -v --rmi all
+	@$(COMPOSE) down -v --rmi all
 	@docker system prune -f
 
 re: fclean up

@@ -177,23 +177,6 @@ Aşağıda Docker’ın en yaygın ve ileri seviye komutları kategorilere ayrı
 
 **Kullanım Senaryoları:** `docker info` ve `docker version` günlük kullanımda Docker ortamını doğrulamak için kullanılır. Sistem disk kullanımını görmek için `docker system df`, gereksiz dosyaları temizlemek için `docker system prune` kullanılır. `events` komutu hata ayıklama veya loglama için olay akışını canlı izlemeye yarar.
 
-### Docker Swarm Komutları  
-Docker Swarm, Docker’ın yerleşik konteyner orkestrasyon aracıdır. Aşağıda temel swarm komutları listelenmiştir:  
-
-| Komut                         | Açıklama                                               | Örnek ve Kullanım                                     |
-|-------------------------------|--------------------------------------------------------|--------------------------------------------------------|
-| `docker swarm init [OPTIONS]` | Bu düğümü bir Swarm kümesi yöneticisi yapar.           | `docker swarm init --advertise-addr 192.168.1.10` – Bu düğümde Swarm başlatır. |
-| `docker swarm join [OPTIONS] <TOKEN> <MANAGER_IP>` | Mevcut bir swarm’a katılır (worker/manager olarak). | `docker swarm join --token <token> 192.168.1.10:2377` – Diğer düğüme katılır. |
-| `docker node ls`              | Swarm içindeki düğümleri listeler (yalnızca master'da). | `docker node ls` – Tüm düğümler ve rolleri gösterilir. |
-| `docker service create [OPTIONS] <IMAJ>` | Yeni bir servis (bir veya daha fazla replika) oluşturur. | `docker service create --name web --replicas 3 nginx` – Üç nginx konteynerinden oluşan bir servis yaratır. |
-| `docker service ls`           | Çalışan servisleri listeler.                            | `docker service ls` – Tüm servisleri (isim, mod, replikalar) listeler. |
-| `docker service scale <SERVIS>=<ADET>` | Servis replika sayısını değiştirir.                    | `docker service scale web=5` – *web* servisini 5 kopyaya çıkarır. |
-| `docker service rm <SERVIS>`  | Bir servisi kaldırır.                                   | `docker service rm web` – *web* servisini siler.      |
-| `docker stack deploy -c <dosya.yml> <isim>` | Birden çok servisi içeren yml ile tüm uygulama paketini (stack) dağıtır. | `docker stack deploy -c docker-compose.yml myapp` – *docker-compose.yml* ile *myapp* adlı stack’i başlatır. |
-| `docker stack ls`             | Dağıtılmış stack’leri listeler.                         | `docker stack ls` – Mevcut stack’leri ve servis sayılarını gösterir. |
-
-**Not:** Docker Swarm, özellikle Docker’ın eski sürümlerinde aktif olarak kullanılmıştır; günümüzde Kubernetes gibi diğer orkestrasyon sistemleri tercih edilmekte, ancak Swarm komutları hâlâ Docker CLI’nın bir parçasıdır.
-
 ### Docker Compose Komutları  
 Docker Compose, birden çok konteyner içeren uygulamaları YAML dosyası ile tanımlayıp çalıştırmak için kullanılır (Compose 2 ile `docker compose` olarak da çalıştırılabilir). Önemli komutlar:  
 
