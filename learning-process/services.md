@@ -47,16 +47,6 @@ Bu dosya, `project/srcs/requirements` klasörü altında bulunan servislerin ne 
     *   **Kullanıcı Yönetimi (WordPress):** Sitedeki WordPress kullanıcılarını doğrudan veritabanından ekleyip çıkarmak için `wp_users` tablosuna girebilirsiniz. Yeni bir admin ekleyebilir (şifre kısmını MD5 ile şifreleyerek girmelisiniz) veya var olan birinin yetkilerini silebilirsiniz.
     *   **Kullanıcı Yönetimi (Veritabanı/MariaDB):** Sadece WordPress değil, MariaDB seviyesinde yeni bir veritabanı kullanıcısı (database user) oluşturmak isterseniz, Adminer ana ekranındayken üst menüdeki "Privileges (Ayrıcalıklar/Yetkiler)" sekmesine tıklayın. Buradan "Create login (Kullanıcı oluştur)" diyerek yeni bir veritabanı yöneticisi tanımlayabilirsiniz.
 
-### 5. Redis (`bonus/redis`)
-*   **Nedir?** Açık kaynaklı, bellek içi (in-memory) veri yapısı deposudur. Önbellek (cache) sunucusu olarak çalışır. Redis (Remote Dictionary Server), verileri bilgisayarın yavaş olan Harddisk'i (veya SSD'si) yerine, çok hızlı olan RAM belleğinde (Memory) tutan gelişmiş bir "Anahtar-Değer" (Key-Value) veritabanıdır.
-
-*   **Nasıl Çalışır?** WordPress, yordamlarının cevaplarını veritabanı yerine direkt Redis üzerinden RAM'den okur, sistemi çok hızlandırır.
-*   **Nasıl Kullanılır?** 
-    *   WordPress kurulumu (wp-cli) aşamasında Redis eklentisi otomatik kurulup aktifleştirilmiş olmalıdır (örn: "Redis Object Cache" eklentisi).
-    *   Bunu test etmek için; WordPress'in admin paneline `/wp-admin` girilir, eklentiler bölümünden Redis eklentisine bakılır ve "Status: Connected (Bağlandı)" yazısı gözlemlenir.
-    *   Terminal üzerinden kullanmak/test etmek isterseniz; `docker exec -it redis redis-cli monitor` komutunu çalıştırın. Ardından tarayıcınızda WordPress sitenizin farklı sayfalarına tıklayın. Terminale anlık olarak `GET` / `SET` loglarının akmaya başladığını göreceksiniz.
-    * Neden WordPress ile kullanıyoruz?; Normalde sen WordPress sayfana girdiğinde arka planda MariaDB'ye gidilir, PHP hesaplamalar yapar ve site zar zor açılır. Redis devreye girdiğinde, WordPress o hesaplanmış sayfayı Redis'in içine (RAM'e) kopyalar. Sen sayfaya ikinci kez girdiğinde sistem "Dur MariaDB'ye gitme, ben bunu daha önce hesaplamıştım, al buyur çok hızlıca vereyim" der. Site fişek gibi açılır.
-
 ### 6. Statik Web Sitesi (`bonus/static-website`)
 *   **Nedir?** HTML, CSS ve JS kullanılarak yazılmış statik tanıtım sayfasıdır. Veritabanı vb. arka ucu yoktur.
 *   **Nasıl Kullanılır?** 
@@ -80,11 +70,3 @@ Bu dosya, `project/srcs/requirements` klasörü altında bulunan servislerin ne 
         *   **Response Time (Yanıt Süresi):** Grafikte ayrıca servisinizin isteklere kaç milisaniyede (ms) yanıt verdiği görülür. Site yavaşlarsa buradan tespit edebilirsiniz.
     *   **Test Etme Sistemi:** Çalışıp çalışmadığını teyit etmek için terminalinizde `docker stop redis` yazarak servisi durdurun. Uptime paneline döndüğünüzde Redis'in "DOWN" durumuna (kırmızıya) geçtiğini anında (veya belirlediğiniz sürede) göreceksiniz. `docker start redis` komutuyla tekrar açtığınızda sistem tekrar kalpleri yeşile (UP) çevirecektir.
     *   **Bakım Modu ve Bildirimler:** Sunucuda bilerek bir işlem (güncelleme vb.) yapacaksanız, izleyicinin sağ üst köşesinden "Pause" (Duraklat) butonuna basarak log şişmesini önleyebilirsiniz. "Settings -> Notifications" bölümünden ise servis çöktüğünde Telegram, Discord veya Mail yoluyla otomatik uyarı atmasını bile konfigüre edebilirsiniz.
-
-### 8. FTP Sunucusu (`bonus/ftp`)
-*   **Nedir?** Bilgisayarlar veya sunucular arasında ağ üzerinden dosya transferi (yükleme ve indirme) yapmanızı sağlayan (File Transfer Protocol) standart bir veri aktarım servisidir.
-*   **Nasıl Çalışır?** İstemci-sunucu (Client-Server) mimarisiyle çalışır. Inception projesindeki vsftpd sunucusu, arka planda güvenli dizin (chroot) sınırlandırması yaparak yalnızca izin verdiğiniz `.env` kullanıcısının WordPress dosyalarının bulunduğu `/var/www/html` klasörüne erişmesini sağlar. Dosya transferlerini başarılı kılması için pasif mod (Passive Mode) üzerinde belirli ağ kurallarını barındırır.
-*   **Nasıl Kullanılır?** 
-    *   **Klasörden Erişim (Program Kurmadan):** Kendi bilgisayarınızda (Windows) sıradan bir dosya klasörü açın. Üstteki adres çubuğuna `ftp://127.0.0.1` yazarak Enter'a basın. Karşınıza çıkan pencereye `.env` içindeki FTP kullanıcı adı ve şifrenizi girin.
-    *   **FileZilla ile Erişim:** Daha profesyonel kullanım için bilgisayarınıza FileZilla (veya WinSCP) programını açın. Sunucu kısmına `127.0.0.1`, kullanıcı adı ve şifreye `.env` bilgilerinizi, Port kısmına ise `21` yazıp bağlanın.
-    *   **Dosya Yönetimi:** Başarıyla giriş yaptıktan sonra tıpkı normal bir USB belleğin veya diskinizin içine girmiş gibi WordPress dizininizi listelenmiş göreceksiniz. WordPress yönetim paneline uğramadan sitenizin ana dosyalarını, tema ve eklentileri (plugins) sürükle-bırak mantığıyla doğrudan kopyalayabilir, değiştirebilir veya kendi cihazınıza indirebilirsiniz.

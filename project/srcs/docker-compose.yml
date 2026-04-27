@@ -63,29 +63,6 @@ services:
       - "3001:3001"
     volumes:
       - uptime:/app/data
-  redis:
-    build: ./requirements/bonus/redis
-    container_name: redis
-    restart: always
-    networks:
-      - inception
-    expose:
-      - "6379"
-  ftp:
-    build: ./requirements/bonus/ftp
-    container_name: ftp
-    restart: always
-    networks:
-      - inception
-    ports:
-      - "21:21"
-      - "40000-40010:40000-40010"
-    depends_on:
-      - wordpress
-    env_file:
-      - .env
-    volumes:
-      - wordpress:/var/www/html
 
 networks:
   inception:
@@ -95,7 +72,6 @@ volumes:
   wordpress:
   mariadb:
   uptime:
-
 
 
 

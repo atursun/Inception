@@ -1,11 +1,2 @@
-en son yapakcasın
-en son yapakcasın
-en son yapakcasın
-en son yapakcasın
-en son yapakcasın
-en son yapakcasın
-en son yapakcasın
-en son yapakcasın
-en son yapakcasın
-en son yapakcasın
-en son yapakcasın
+git commit --allow-empty -m "graph fix test"
+git push origin m
