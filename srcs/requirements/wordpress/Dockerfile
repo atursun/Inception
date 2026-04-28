@@ -8,7 +8,6 @@ RUN apt update && apt install -y \
     wget \
     default-mysql-client
 
-# PHP ve web kök dizinlerini oluştur
 RUN mkdir -p /var/www/html /run/php
 
 WORKDIR /var/www/html
