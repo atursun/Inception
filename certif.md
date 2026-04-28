@@ -1,0 +1,2 @@
+Bir domaine istek attığımda, site (Nginx) tarayıcıya bir SSL/TLS sertifikası sunar. Tarayıcı bu sertifikanın geçerliliğini ve hangi kurum tarafından imzalandığını kontrol eder. Eğer sertifika, tarayıcının güvenilir kabul ettiği bir Certificate Authority (CA) tarafından imzalanmamışsa “güvenilir değil” uyarısı gösterir. https://atursun.42.fr adresinde bu uyarıyı görmemin temel nedeni, sertifikanın self-signed olmasıdır.
+
