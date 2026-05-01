@@ -4,8 +4,8 @@
 
 ## Description
 
-`Inception` is a containerized infrastructure project built with Docker and Docker Compose.  
-The stack provides a secure WordPress setup with:
+`Inception` aims to build and manage a multi-service system using Docker, ensuring that all services run together seamlessly.
+It provides a secure WordPress setup with:
 - `nginx` (TLS entrypoint, reverse proxy)
 - `wordpress` + `p>hp-fpm` (application layer)
 - `mariadb` (database layer)

@@ -1,3 +1,18 @@
+################################################################################
+# 
+# Amaç: PHP-FPM sunucusu ve WordPress uygulama katmanını sağlamak.
+# 
+# İçerik: Debian Bullseye tabanlı PHP-FPM 7.4 ve WordPress CMS
+# Fonksiyonlar:
+#   1. PHP-FPM: Port 9000'de çalışır, Nginx'ten gelen PHP isteklerini işler
+#   2. WP-CLI: WordPress'i komut satırından kurmak ve yönetmek için kullanılır
+#   3. WordPress core: İndirilerek /var/www/html içine yerleştirilir
+#   4. Database bağlantısı: MariaDB'ye bağlanır (wp-config.php ile otomatik yapılandırılır)
+# 
+# Başlangıç: setup.sh script'i WordPress'i tamamen kurar ve yapılandırır (idempotent).
+# Veri Kalıcılığı: /var/www/html dizini Docker volume ile host'ta saklanır.
+################################################################################
+
 FROM debian:bullseye
 
 RUN apt update && apt install -y \

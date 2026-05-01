@@ -1,3 +1,18 @@
+################################################################################
+# 
+# Amaç: MariaDB veritabanını web tarayıcısından yönetmek için 
+#       kullanıcı dostu bir arayüz sağlamak.
+# 
+# İçerik: Debian Bullseye tabanlı Adminer (hafif veritabanı yönetim aracı)
+# Fonksiyonlar:
+#   1. Port 85'te çalışır
+#   2. Tarayıcıdan MariaDB'ye bağlanma, tablo görüntüleme, SQL sorgusu çalıştırma
+#   3. Nginx tarafından https://domain/adminer'dan erişilir
+# 
+# Teknik: PHP'nin built-in web sunucusu (php -S) kullanılır.
+#         Ayrı bir Nginx/Apache kurmaya gerek yoktur.
+################################################################################
+
 FROM debian:bullseye
 
 RUN apt update && apt install -y php php-mysqli wget

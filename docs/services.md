@@ -21,7 +21,7 @@ Bu dosya, `project/srcs/requirements` klasörü altında bulunan servislerin ne 
     *   Veritabanını yönetmek veya manuel olarak (SQL sorgularıyla) kullanmak isterseniz, ek sisteme dahil edilen **Adminer**'ı kullanmalısınız veya `docker exec -it mariadb bash` komutuyla konteynere girerek terminalden `mysql` komutuyla kontrol etmelisiniz.
 
 ### 3. WordPress (PHP-FPM ile)
-*   **Nedir?** Dünyanın en popüler ücretsiz İçerik Yönetim Sistemidir (CMS).
+*   **Nedir?** web sitesi kurmak ve yönetmek için kullanılan açık kaynaklı bir içerik yönetim sistemidir (CMS). Kod yazmadan blog, şirket sitesi, haber sitesi, portföy veya e-ticaret sitesi oluşturmayı kolaylaştırır.
 *   **Nasıl Çalışır?** Sitenin hem görüntülenen yüzünü hem de yönetim panelini çalıştırır. NGINX'den gelen istekleri okur, MariaDB'den yazar/okur ve sayfayı oluşturur.
 *   **Nasıl Kullanılır?** 
     *   Tarayıcıdan ana domain'inize (örn: `https://<login>.42.fr`) girdiğinizde WordPress altyapılı kendi sitenizi görürsünüz.
